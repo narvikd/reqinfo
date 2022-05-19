@@ -14,11 +14,11 @@ func main() {
 		WriteTimeout:      10 * time.Second,
 	})
 
-	a.Get("/", func(ctx *fiber.Ctx) error {
+	a.All("/", func(ctx *fiber.Ctx) error {
 		return ctx.SendString(ctx.Request().String())
 	})
 
-	errListen := a.Listen("0.0.0.0:3003")
+	errListen := a.Listen("0.0.0.0:3001")
 	if errListen != nil {
 		log.Fatalln("server can't be started:", errListen)
 	}
