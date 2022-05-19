@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  web:
+    image: narvikd/reqinfo:latest
+    container_name: reqinfo
+    networks:
+      - reqinfo
+networks:
+  reqinfo:
+    external: false
